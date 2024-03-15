@@ -41,6 +41,7 @@ Para usar o PixelFinancy, execute o seguinte comando:
 npm run dev
 
 
+
 ## 🛠️ Tecnologias Utilizadas
 
 O PixelFinancy foi desenvolvido utilizando as seguintes tecnologias:
@@ -80,18 +81,9 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 Agradecemos ao seguinte contribuidor que fez parte deste projeto:
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="#" title="defina o titulo do link">
-        <img src="[https://avatars3.githubusercontent.com/u/31936044](https://avatars.githubusercontent.com/u/125518719?s=400&u=55bb3aa3195861522468f02338b7cd1791c47ffa&v=4)" width="100px;" alt="Foto do Vinicios Ragazzi no GitHub"/><br>
-        <sub>
-          <b>Vinicios Ragazzi</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+| ![Foto do Vinicios Ragazzi no GitHub](https://avatars3.githubusercontent.com/u/125518719) |
+| --------------------------------------------------------------------------------------------------- |
+| [Vinicios Ragazzi](#)                                                                               |
 
 ## 😄 Seja um dos contribuidores
 
@@ -100,6 +92,5 @@ Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contr
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
-
 
 
