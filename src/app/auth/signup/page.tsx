@@ -6,7 +6,7 @@ import Logo from "@/components/logo";
 const Signup = () => {
   return (
     <main className="flex h-screen  items-center justify-between flex-row-reverse">
-      <div className="bg-slate-900 w-full h-full flex-1 py-10 hidden lg:block">
+      <div className="bg-app-background w-full h-full flex-1 py-10 hidden lg:block">
         <div className="container h-full slideRightToLeft">
           <Logo />
           <div className=" w-full h-full flex flex-col justify-around  px-7 gap-10 ">

@@ -23,7 +23,7 @@ export const SignupForm = () => {
           <h1 className="text-4xl font-bold ">Crie sua conta</h1>
           <div className=" w-full flex flex-col  max-w-xs ">
             <label
-              className="mb-3 mt-5 block text-slate-200 font-semibold"
+              className="mb-3 mt-5 block text-slate-200 font-semibold text-sm"
               htmlFor="name"
             >
               Nome
@@ -44,7 +44,7 @@ export const SignupForm = () => {
           </div>
           <div className=" w-full flex flex-col  max-w-xs ">
             <label
-              className="mb-3 mt-5 block text-slate-200 font-semibold"
+              className="mb-3 mt-5 block text-slate-200 font-semibold text-sm"
               htmlFor="email"
             >
               Email
@@ -65,7 +65,7 @@ export const SignupForm = () => {
           </div>
           <div className=" w-full flex flex-col  max-w-xs ">
             <label
-              className="mb-3 mt-5 block text-slate-200 font-semibold"
+              className="mb-3 mt-5 block text-slate-200 font-semibold text-sm"
               htmlFor="password"
             >
               Senha
@@ -98,9 +98,7 @@ export const SignupForm = () => {
           </Link>
         </span>
 
-        <span className="text-sm w-full flex justify-center mt-4 "> ou </span>
-
-        <button className="mt-4 w-full  bg-slate-900 py-2 rounded-xl font-medium text-white hover:bg-slate-700 flex items-center justify-center gap-2">
+        <button className="mt-4 w-full  bg-slate-900 py-2 rounded-xl font-medium text-white hover:bg-app-background transition-all flex items-center justify-center gap-2">
           <FaGoogle className="text-teal-500" /> Google
         </button>
       </div>
