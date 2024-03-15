@@ -84,7 +84,7 @@ Agradecemos ao seguinte contribuidor que fez parte deste projeto:
   <tr>
     <td align="center">
       <a href="#" title="defina o titulo do link">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Vinicios Ragazzi no GitHub"/><br>
+        <img src="[https://avatars3.githubusercontent.com/u/31936044](https://avatars.githubusercontent.com/u/125518719?s=400&u=55bb3aa3195861522468f02338b7cd1791c47ffa&v=4)" width="100px;" alt="Foto do Vinicios Ragazzi no GitHub"/><br>
         <sub>
           <b>Vinicios Ragazzi</b>
         </sub>
