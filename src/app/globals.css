@@ -104,6 +104,11 @@ input.dark:-webkit-autofill {
   }
 }
 
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards 0.3s;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

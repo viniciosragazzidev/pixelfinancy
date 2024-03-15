@@ -7,12 +7,7 @@ const Dashboard = async () => {
   console.log(session);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-3xl font-bold">
-        Bem vindo ao Dashboard {session?.user?.name}{" "}
-      </h1>
-      <SignoutButton />
-    </main>
+    <main className="flex w-full min-h-screen flex-col items-center justify-between p-24"></main>
   );
 };
 

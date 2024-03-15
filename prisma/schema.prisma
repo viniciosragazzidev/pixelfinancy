@@ -20,14 +20,30 @@ model Post {
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   name      String?
   surname   String?
-  email     String?  @unique
+  email     String?   @unique
   password  String?
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
   posts     Post[]
+  Profile   Profile[]
 
   @@map(name: "users")
+}
+
+model Profile {
+  id          String   @id @default(cuid())
+  bio         String?
+  name        String?
+  surname     String?
+  email       String?
+  contact     String[]
+  address     String[]
+  dateofbirth String?
+  gender      String?
+  createdAt   DateTime @default(now()) @map(name: "created_at")
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
 }
