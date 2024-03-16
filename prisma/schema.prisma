@@ -10,25 +10,18 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model Post {
-  id        String  @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  String?
-}
-
 model User {
-  id        String    @id @default(cuid())
+  id        String   @id @default(cuid())
   name      String?
   surname   String?
-  email     String?   @unique
+  email     String?  @unique
   password  String?
-  createdAt DateTime  @default(now()) @map(name: "created_at")
-  updatedAt DateTime  @updatedAt @map(name: "updated_at")
-  posts     Post[]
-  Profile   Profile[]
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  profile   Profile? @relation(fields: [profileId], references: [id])
+  profileId String?
+  Company   Company? @relation(fields: [companyId], references: [id])
+  companyId String? // ID da empresa
 
   @@map(name: "users")
 }
@@ -43,7 +36,21 @@ model Profile {
   address     String[]
   dateofbirth String?
   gender      String?
+  image       String?
   createdAt   DateTime @default(now()) @map(name: "created_at")
-  user        User     @relation(fields: [userId], references: [id])
-  userId      String
+  updatedAt   DateTime @updatedAt @map(name: "updated_at")
+  User        User[]
+}
+
+model Company {
+  id        String   @id @default(cuid())
+  name      String
+  contact   String[]
+  address   String[]
+  document  String
+  type      String
+  image     String?
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  users     User[] // Relacionamento com usuários
 }

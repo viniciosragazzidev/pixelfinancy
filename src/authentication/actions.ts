@@ -1,9 +1,10 @@
 "use server";
 import { sql } from "@vercel/postgres";
-import { signIn } from "./auth";
+import { auth, signIn } from "./auth";
 import { AuthError } from "next-auth";
 import bcrypt from "bcrypt";
 import { redirect } from "next/navigation";
+import { User } from "@prisma/client";
 // ...
 export async function authenticate(
   prevState: string | undefined,
@@ -38,5 +39,31 @@ export async function Signup(prevState: void | undefined, formData: FormData) {
     redirect("/login");
   } catch (error) {
     throw error;
+  }
+}
+
+export async function getUser(email: string) {
+  try {
+    const user = await fetch(`http://localhost:3000/api/users?email=${email}`, {
+      next: { revalidate: 10, tags: ["user"] },
+    });
+    if (!user.ok) return undefined;
+    const data = await user.json();
+    return data.users[0];
+  } catch (error) {
+    console.error("Failed to fetch user:", error);
+    throw new Error("Failed to fetch user");
+  }
+}
+
+export async function getCurrentUser() {
+  const currentSession = await auth();
+
+  if (!currentSession) {
+    return undefined;
+  } else {
+    const user = await getUser(currentSession.user?.email || "");
+    if (!user) return undefined;
+    return user;
   }
 }

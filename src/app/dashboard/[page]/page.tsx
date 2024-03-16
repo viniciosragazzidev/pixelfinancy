@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 
 import { usePathname, useRouter } from "next/navigation";
 import Error from "@/app/not-found";
+import Services from "./services/Services";
 
 const DashboardWrapper = () => {
   const pathname = usePathname();
@@ -12,11 +13,7 @@ const DashboardWrapper = () => {
   const renderPageComponent = () => {
     switch (pathname) {
       case "/dashboard/servicos":
-        return (
-          <>
-            <h1 className="text-3xl font-bold">Servicos</h1>
-          </>
-        );
+        return <Services />;
 
       default:
         return (
