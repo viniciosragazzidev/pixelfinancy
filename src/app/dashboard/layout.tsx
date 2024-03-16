@@ -1,10 +1,10 @@
 // layout
 
-import { getCurrentUser, getUser } from "@/authentication/actions";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar";
 import { auth } from "@/authentication/auth";
 import { User } from "@/lib/@types/apptypes";
+import { getCurrentUser } from "@/lib/requisitions";
 import { FaTruckLoading } from "react-icons/fa";
 import { MdFrontLoader } from "react-icons/md";
 
@@ -13,21 +13,9 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const user: User = await getCurrentUser();
-  // console.log(user);
-  const user: User = {
-    id: "12345",
-    name: "Alice",
-    surname: "Johnson",
-    email: "alice@example.com",
-    password: "securepassword",
-    createdAt: new Date("2024-03-16T12:00:00Z"),
-    updatedAt: new Date("2024-03-16T14:30:00Z"),
-    posts: [],
-    profile: [],
-    companyId: "6789",
-    Company: [],
-  };
+  const user: User = await getCurrentUser();
+  console.log(user);
+
   return (
     <>
       {!user ? (
@@ -37,7 +25,11 @@ export default async function DashboardLayout({
           </span>
         </div>
       ) : !user.profile ? (
-        <span>ddd</span>
+        <div className="w-screen h-screen flex justify-center items-center">
+          <span className="text-5xl font-semibold text-slate-900">
+            Sem profile
+          </span>
+        </div>
       ) : (
         <div className="flex  w-screen h-screen">
           <Sidebar />
