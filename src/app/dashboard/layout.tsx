@@ -15,15 +15,17 @@ export default async function DashboardLayout({
 }) {
   // const user: User = await getCurrentUser();
   // console.log(user);
-  const user = {
-    id: "41217afb-448a-4f16-bf41-d4802dbd5e83",
-    name: "Vinicios Ragazzi",
-    surname: null,
-    email: "viniciosragazzzi@gmail.com",
-    password: "$2b$10$yLGaWR7.hLx6td7zbzzqzeipMZ849ZpwO.ggZswsiBkyvC18CWK6y",
-    createdAt: new Date(),
-    updatedAt: new Date(),
+  const user: User = {
+    id: "12345",
+    name: "Alice",
+    surname: "Johnson",
+    email: "alice@example.com",
+    password: "securepassword",
+    createdAt: new Date("2024-03-16T12:00:00Z"),
+    updatedAt: new Date("2024-03-16T14:30:00Z"),
+    posts: [],
     profile: [],
+    companyId: "6789",
     Company: [],
   };
   return (
