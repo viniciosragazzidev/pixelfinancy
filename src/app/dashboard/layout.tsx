@@ -1,14 +1,12 @@
 // layout
 
-import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar";
-import { auth } from "@/authentication/auth";
 import { User } from "@/lib/@types/apptypes";
 import { getCurrentUser } from "@/lib/requisitions";
-import { FaTruckLoading } from "react-icons/fa";
 import { MdFrontLoader } from "react-icons/md";
 
 import FormProfileAndCompanyModal from "./components/ProfileAndCompanyForms/FormProfileAndCompanyModal";
+import Navbar from "./components/Navbar/Navbar";
 
 export default async function DashboardLayout({
   children,

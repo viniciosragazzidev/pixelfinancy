@@ -4,7 +4,9 @@ import React from "react";
 
 const Dashboard = async () => {
   return (
-    <main className="flex flex-col items-center justify-between p-24"></main>
+    <main className="flex flex-col items-center justify-between p-24">
+      ddddddd
+    </main>
   );
 };
 

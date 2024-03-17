@@ -19,9 +19,7 @@ const AccountButtons = ({
 }) => {
   return (
     <div className="flex items-center gap-6">
-      <span className="bg-slate-900 text-slate-200 p-2 rounded-full">
-        <FaRegMoon />
-      </span>
+      {/* <ModeToggle/> */}
       <span className="bg-slate-900 text-slate-200 p-2 rounded-full">
         <FaRegBell />
       </span>
