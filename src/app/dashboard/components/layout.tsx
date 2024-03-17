@@ -8,8 +8,6 @@ import { getCurrentUser } from "@/lib/requisitions";
 import { FaTruckLoading } from "react-icons/fa";
 import { MdFrontLoader } from "react-icons/md";
 
-import FormProfileAndCompanyModal from "./components/ProfileAndCompanyForms/FormProfileAndCompanyModal";
-
 export default async function DashboardLayout({
   children,
 }: {
@@ -27,7 +25,7 @@ export default async function DashboardLayout({
           </span>
         </div>
       ) : !user.profile || !user.Company ? (
-        <FormProfileAndCompanyModal user={user} />
+        <>{!user.profile ? <RegisterProfile /> : <RegisterCompany />}</>
       ) : (
         <div className="flex  w-screen h-screen">
           <Sidebar />

@@ -7,22 +7,33 @@ const Logo = ({
   className,
   classNameBadge,
   textComplete,
+  type,
 }: {
   className?: string;
   classNameBadge?: string;
   textComplete?: boolean;
+  type?: "dark" | "light";
 }) => {
   return (
     <h1
       className={twMerge(
         silkscreen.className,
-        "text-5xl font-semibold text-teal-400 flex  items-center gap-2",
+        `text-5xl font-semibold  ${
+          type === "dark" ? "text-slate-950" : "text-teal-400"
+        } flex  items-center gap-2`,
         className
       )}
     >
       {textComplete ? (
         <span>
-          Pixel<span className="text-slate-200">99</span>
+          Pixel
+          <span
+            className={` ${
+              type === "dark" ? "text-slate-950" : "text-slate-200"
+            }`}
+          >
+            99
+          </span>
         </span>
       ) : (
         "P"

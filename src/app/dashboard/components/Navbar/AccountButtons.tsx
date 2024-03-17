@@ -8,15 +8,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { User } from "@/lib/@types/apptypes";
+import { FaRegBell, FaRegMoon } from "react-icons/fa6";
 
-const AccountButtons = ({ user }: { user: User }) => {
+const AccountButtons = ({
+  user,
+  mode,
+}: {
+  user: User;
+  mode: "simple" | "full";
+}) => {
   return (
     <div className="flex items-center gap-6">
-      <span className="">
-        <FaMoon />
+      <span className="bg-slate-900 text-slate-200 p-2 rounded-full">
+        <FaRegMoon />
       </span>
-      <span className="">
-        <FaBell />
+      <span className="bg-slate-900 text-slate-200 p-2 rounded-full">
+        <FaRegBell />
       </span>
 
       <DropdownMenu>
@@ -29,7 +36,11 @@ const AccountButtons = ({ user }: { user: User }) => {
               />
               <AvatarFallback>VR</AvatarFallback>
             </Avatar>
-            <span className="text-sm text-slate-200 font-semibold">
+            <span
+              className={`text-sm text-slate-200 font-semibold ${
+                mode === "simple" && "hidden"
+              }`}
+            >
               {user.name}
             </span>
           </div>
